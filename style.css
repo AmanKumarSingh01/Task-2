@@ -1,6 +1,6 @@
 li >button {
     border-radius: 10%;
-    margin-left : 2%
+    margin-left : 15%
 }
 
 
@@ -8,8 +8,10 @@ li >button {
 li {
     margin-top: 1%;
     padding: 1%;
-    border: 10px solid green;
-    /* width: 40%; */
+    margin-top: 5%;
+    padding: 5%;
+    border: 3px solid lightgray;
+    width: 95%;
 }
 
 .mybtn {
@@ -28,8 +30,9 @@ body {
 
 .myDiv {
     display: flex;
-    margin-left: -17%;
+    margin-left: -20%;
 }
 .myDiv > div{
     width: 30%;
+    margin-right: 2%;
 }

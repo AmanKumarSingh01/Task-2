@@ -1,7 +1,5 @@
 //Global variable
 let arr = new Array();
-const left = 'left';
-const right ='right'
 
 add = () =>{
     const name = prompt("Enter the leader name");
@@ -12,14 +10,15 @@ add = () =>{
     arr.push({name , marks});
     sortDisplay()
 }
-//Function for updating the left list
-
+//Function for updating the left list component
 createLeft = (name , marks  ) =>{
+    const left = 'left';
     const list = createElement(name , marks , left)
     document.getElementById("Left").appendChild(list)
 }
-
+//Function for updating the left list component
 createRight = (name , marks , ) => {
+    const right ='right'
     const list = createElement(name , marks, right)
     document.getElementById("Right").appendChild(list)
 }
@@ -30,12 +29,12 @@ createElement = (name , marks , direction) =>{
     list.id =name.concat(direction);
     list.innerHTML += '<span>'+name +'</span> <span style = \" margin-left : 2% ; margin-right : 2% \">'+marks+'</span>';
     let increment = document.createElement("BUTTON");
-    increment.innerHTML = "Increment"
+    increment.innerHTML = "&#43;"
     increment.id = name;
     increment.className = 'button'
     increment.setAttribute("onclick" , "increment(event)");
     let decrement = document.createElement("BUTTON");
-    decrement.innerHTML = "decrement"
+    decrement.innerHTML = "&#8722;"
     decrement.id = name;
     decrement.className = 'button'
     decrement.setAttribute("onclick" , "decrement(event)");
@@ -44,7 +43,7 @@ createElement = (name , marks , direction) =>{
     return list;
 } 
 
-
+//The increment function
 increment =(event) => {
     const id = event.target.id;
     var marks;
@@ -60,6 +59,7 @@ increment =(event) => {
     sortDisplay();
 }
 
+//Decrement Function
 decrement =(event) => {
     const id = event.target.id;
     var marks;
@@ -76,34 +76,36 @@ decrement =(event) => {
     sortDisplay();
 }
 
+
+//Updating the left component after increment/decrement
 updateLeft = (id ,marks) => {
     const change = document.getElementById(id+"left")
     change.id = id+'left';
-    change.innerHTML = id+' '+marks
+    change.innerHTML += '<span>'+name +'</span> <span style = \" margin-left : 2% ; margin-right : 2% \">'+marks+'</span>';
     const decrement = document.createElement("BUTTON");
-    decrement.innerHTML = "decrement"
+    decrement.innerHTML = "&#8722;"
     decrement.id = id;
     decrement.setAttribute("onclick" , "decrement(event)")
     const increment = document.createElement("BUTTON");
-    increment.innerHTML = "Increment"
+    increment.innerHTML = "&#43;"
     increment.id = id;
     increment.setAttribute("onclick" , "increment(event)")
     change.appendChild(increment)
     change.appendChild(decrement)
     
 }
-
+//Updating the left component after increment/decrement
 updateRight = (id , marks) => {
     const change = document.getElementById(id+"right")
     change.id = id+'right';
     marks=parseInt(marks);
-    change.innerHTML = id+' '+marks
+    change.innerHTML += '<span>'+name +'</span> <span style = \" margin-left : 2% ; margin-right : 2% \">'+marks+'</span>';
     const decrement = document.createElement("BUTTON");
-    decrement.innerHTML = "decrement"
+    decrement.innerHTML = "&#8722;"
     decrement.id = id;
     decrement.setAttribute("onclick" , "decrement(event)")
     const increment = document.createElement("BUTTON");
-    increment.innerHTML = "Increment"
+    increment.innerHTML = "&#43;"
     increment.id = id;
     increment.setAttribute("onclick" , "increment(event)")
     change.appendChild(increment)
@@ -111,9 +113,7 @@ updateRight = (id , marks) => {
 }
 
 
-
-
-
+//Sorting the function and displaying
 sortDisplay = () => {
     arr.sort((a, b) => {return a.marks -b.marks} );
     document.getElementById('Left').innerHTML = '';
