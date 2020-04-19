@@ -3,9 +3,7 @@ li >button {
     margin-left : 2%
 }
 
-button {
-    margin-left: 10%;
-}
+
 
 li {
     margin-top: 1%;
@@ -21,7 +19,7 @@ li {
 body {
     align-content: center;
     justify-content: center;
-    /* margin-left: 40%; */
+    margin-left: 40%; 
 }
 
 .Right {
@@ -30,7 +28,8 @@ body {
 
 .myDiv {
     display: flex;
+    margin-left: -17%;
 }
 .myDiv > div{
-    width: 20%;
+    width: 30%;
 }
