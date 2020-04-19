@@ -2,11 +2,16 @@ li >button {
     border-radius: 10%;
     margin-left : 2%
 }
+
+button {
+    margin-left: 10%;
+}
+
 li {
     margin-top: 1%;
     padding: 1%;
     border: 10px solid green;
-    width: 40%;
+    /* width: 40%; */
 }
 
 .mybtn {
@@ -16,5 +21,16 @@ li {
 body {
     align-content: center;
     justify-content: center;
-    margin-left: 40%;
+    /* margin-left: 40%; */
+}
+
+.Right {
+    margin-left: 2%;
+}
+
+.myDiv {
+    display: flex;
+}
+.myDiv > div{
+    width: 20%;
 }
